@@ -51,4 +51,35 @@ source devel/setup.bash
 roslaunch darknet_ros yolo_v4.launch
 ```
 
+# 使用realsense 
+```
+cd darknet_ros/config
+sudo gedit ros.yaml
+將以下
+  camera_reading:
+    topic: /usb_cam/image_raw
+修改為
+  camera_reading:
+    topic: /camera/color/image_raw
 
+cd darknet_ros/launch
+sudo gedit darknet_ros.launch
+將以下 第6.23行
+"/camera/rgb/image_raw"
+修改為
+"/camera/color/image_raw"
+```
+
+# 實際運行realsense 
+```
+cd 自己的workspace/
+source devel/setup.bash
+roslaunch realsense2_camera rs_rgbd.launch align_depth:=true filters:=pointcloud 
+```
+
+- 在開啟一個終端
+```
+cd 自己的workspace/
+source devel/setup.bash
+roslaunch darknet_ros yolo_v4.launch
+```
