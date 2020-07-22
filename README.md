@@ -6,8 +6,8 @@
 - 實際測試
 
 ## Prepare
-- 軟體環境：Ubuntu18.04,ROS-melodic,OpenCV3.2(代碼中僅能使用3.2以下)
-
+- 軟體環境：Ubuntu18.04,ROS-melodic,OpenCV3.2(代碼中僅能使用含3.2以下)
+如果使用Ubuntu16.04 請將下述"melodic"改為"kinetic"即可
 ## How to used
 ### build
 ```
@@ -51,7 +51,7 @@ source devel/setup.bash
 roslaunch darknet_ros yolo_v4.launch
 ```
 
-# 使用realsense 
+### 使用realsense 
 ```
 cd darknet_ros/config
 sudo gedit ros.yaml
@@ -70,7 +70,7 @@ sudo gedit darknet_ros.launch
 "/camera/color/image_raw"
 ```
 
-# 實際運行realsense 
+### 實際運行realsense 
 ```
 cd 自己的workspace/
 source devel/setup.bash
